@@ -1,0 +1,4 @@
+---
+- name: install composer
+  shell:
+    wget https://getcomposer.org/composer.phar && /bin/mv composer.phar /usr/local/bin/composer && chmod +x /usr/local/bin/composer

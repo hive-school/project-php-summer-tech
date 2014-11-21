@@ -1,0 +1,14 @@
+backend/web/bundles/
+backend/app/config/parameters.yml
+backend/var/bootstrap.php.cache
+backend/var/SymfonyRequirements.php
+backend/var/cache/*
+backend/var/logs/*
+!backend/var/cache/.gitkeep
+!backend/var/logs/.gitkeep
+backend/vendor/
+backend/bin/*
+!backend/bin/console
+!backend/bin/symfony_requirements
+.idea
+.vagrant
