@@ -1,0 +1,14 @@
+bionic_university_web:
+    resource: "@BionicUniversityWebBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|ru
+
+bionic_university_catalog:
+    resource: "@BionicUniversityCatalogBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|ru
+

@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <header>
+        <a href="{{ path('index') }}">
+            {{ 'welcome_message'|trans }}
+        </a>
+
+        <nav>
+            <ul>
+                {% for category in categories() %}
+                    <li>
+                        <a href="{{ path('category_index', {name: category.name}) }}">
+                            {{ category.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        &copy; Bionic University
+    </footer>
+{% endblock %}
