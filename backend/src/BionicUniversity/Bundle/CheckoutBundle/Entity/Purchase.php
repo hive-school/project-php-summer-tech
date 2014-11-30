@@ -61,7 +61,7 @@ class Purchase
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="BionicUniversity\Bundle\CheckoutBundle\Entity\OrderProduct" ,mappedBy="purchase")
+     * @ORM\OneToMany(targetEntity="BionicUniversity\Bundle\CheckoutBundle\Entity\PurchaseProduct" ,mappedBy="purchase")
      */
     private $products;
 
