@@ -1,0 +1,3 @@
+bionic_university_product_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: BionicUniversityProductBundle:Default:index }

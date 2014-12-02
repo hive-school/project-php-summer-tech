@@ -16,4 +16,27 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * Finds and displays a Product entity.
+     *
+     * @Route("/product/{id}", name="web_product_show")
+     * @Template()
+     */
+    public function showAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('BionicUniversityProductBundle:Product')->find($id);
+
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Product entity.');
+        }
+
+
+        return array(
+            'entity'      => $entity,
+        );
+    }
 }

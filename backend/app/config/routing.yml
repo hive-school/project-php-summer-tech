@@ -12,3 +12,16 @@ bionic_university_catalog:
     requirements:
         _locale: en|ru
 
+bionic_university_product:
+    resource: "@BionicUniversityProductBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|ru
+
+#bionic_university_product_status:
+#    resource: "@BionicUniversityProductBundle/Controller/Product/"
+#    type:     annotation
+#    prefix:   /{_locale}
+#    requirements:
+#        _locale: en|ru

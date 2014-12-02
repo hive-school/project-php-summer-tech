@@ -1,0 +1,4 @@
+services:
+#    bionic_university_product.example:
+#        class: BionicUniversity\Bundle\ProductBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
