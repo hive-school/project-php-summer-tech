@@ -30,6 +30,7 @@ class AppKernel extends Kernel
             new BionicUniversity\Bundle\CheckoutBundle\BionicUniversityCheckoutBundle(),
             new BionicUniversity\Bundle\WebBundle\BionicUniversityWebBundle(),
             new BionicUniversity\Bundle\ProductBundle\BionicUniversityProductBundle()
+            new BionicUniversity\Bundle\DeliveryBundle\BionicUniversityDeliveryBundle(),
         ];
 
         $environmentBundles = [];
@@ -38,7 +39,6 @@ class AppKernel extends Kernel
                 new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle(),
                 new Sensio\Bundle\DistributionBundle\SensioDistributionBundle(),
                 new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle(),
-                new BionicUniversity\Bundle\ProductBundle\BionicUniversityProductBundle(),
             ];
         }
 

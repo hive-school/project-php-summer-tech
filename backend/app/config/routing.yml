@@ -1,3 +1,8 @@
+bionic_university_delivery:
+    resource: "@BionicUniversityDeliveryBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+
 bionic_university_web:
     resource: "@BionicUniversityWebBundle/Controller/"
     type:     annotation
