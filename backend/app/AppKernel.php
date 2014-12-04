@@ -29,7 +29,7 @@ class AppKernel extends Kernel
             new BionicUniversity\Bundle\CatalogBundle\BionicUniversityCatalogBundle(),
             new BionicUniversity\Bundle\CheckoutBundle\BionicUniversityCheckoutBundle(),
             new BionicUniversity\Bundle\WebBundle\BionicUniversityWebBundle(),
-            new BionicUniversity\Bundle\ProductBundle\BionicUniversityProductBundle()
+            new BionicUniversity\Bundle\ProductBundle\BionicUniversityProductBundle(),
             new BionicUniversity\Bundle\DeliveryBundle\BionicUniversityDeliveryBundle(),
         ];
 

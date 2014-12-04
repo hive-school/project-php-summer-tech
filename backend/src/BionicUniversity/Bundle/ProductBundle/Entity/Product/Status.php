@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Status
  *
- * @ORM\Table()
+ * @ORM\Table(name="product_status")
  * @ORM\Entity
  */
 class Status
