@@ -1,7 +1,16 @@
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%/
+        permanent: true
+
 bionic_university_user:
     resource: "@BionicUniversityUserBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|ru
 
 bionic_university_web:
     resource: "@BionicUniversityWebBundle/Controller/"
