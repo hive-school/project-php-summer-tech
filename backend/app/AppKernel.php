@@ -29,6 +29,7 @@ class AppKernel extends Kernel
             new BionicUniversity\Bundle\CatalogBundle\BionicUniversityCatalogBundle(),
             new BionicUniversity\Bundle\CheckoutBundle\BionicUniversityCheckoutBundle(),
             new BionicUniversity\Bundle\WebBundle\BionicUniversityWebBundle(),
+            new BionicUniversity\Bundle\ProductBundle\BionicUniversityProductBundle()
         ];
 
         $environmentBundles = [];
@@ -41,7 +42,7 @@ class AppKernel extends Kernel
             ];
         }
 
-        return $bundles;
+        return array_merge($systemBundles, $applicationBundles, $environmentBundles);
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)

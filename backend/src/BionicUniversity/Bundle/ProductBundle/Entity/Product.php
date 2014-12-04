@@ -16,7 +16,7 @@ class Product
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -25,7 +25,7 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
@@ -37,7 +37,7 @@ class Product
     private $description;
 
     /**
-     * @var integer
+     * @var CategoryInterface
      *
      * @ORM\Column(name="category", type="integer")
      */
@@ -46,7 +46,7 @@ class Product
     /**
      * @var float
      *
-     * @ORM\Column(name="price", type="float")
+     * @ORM\Column(type="float")
      */
     private $price;
 

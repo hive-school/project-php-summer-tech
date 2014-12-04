@@ -16,7 +16,7 @@ class Purchase
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -25,35 +25,35 @@ class Purchase
     /**
      * @var float
      *
-     * @ORM\Column(name="sum", type="float")
+     * @ORM\Column(type="float")
      */
     private $sum;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="firstName", type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $firstName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="lastName", type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $lastName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="telephoneNumber", type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $telephoneNumber;
 
