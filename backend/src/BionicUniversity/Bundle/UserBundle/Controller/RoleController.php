@@ -13,7 +13,7 @@ use BionicUniversity\Bundle\UserBundle\Form\RoleType;
 /**
  * Role controller.
  *
- * @Route("/role")
+ * @Route("/admin/role")
  */
 class RoleController extends Controller
 {
