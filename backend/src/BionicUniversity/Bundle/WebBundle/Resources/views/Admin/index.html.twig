@@ -1,0 +1,48 @@
+{% extends 'BionicUniversityWebBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <ul>
+        <li>
+            <a href="{{ path('category') }}">
+                Categories
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('product') }}">
+                Products
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('product_status') }}">
+                Product Statuses
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('delivery') }}">
+                Delivery
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('delivery_status') }}">
+                Delivery Statuses
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('delivery_type') }}">
+                Delivery Types
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('user') }}">
+                Users
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('role') }}">
+                Roles
+            </a>
+        </li>
+    </ul>
+
+{% endblock %}

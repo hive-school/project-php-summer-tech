@@ -27,7 +27,11 @@ class AppKernel extends Kernel
 
         $applicationBundles = [
             new BionicUniversity\Bundle\CatalogBundle\BionicUniversityCatalogBundle(),
+            new BionicUniversity\Bundle\CheckoutBundle\BionicUniversityCheckoutBundle(),
             new BionicUniversity\Bundle\WebBundle\BionicUniversityWebBundle(),
+            new BionicUniversity\Bundle\ProductBundle\BionicUniversityProductBundle(),
+            new BionicUniversity\Bundle\DeliveryBundle\BionicUniversityDeliveryBundle(),
+            new BionicUniversity\Bundle\UserBundle\BionicUniversityUserBundle(),
         ];
 
         $environmentBundles = [];

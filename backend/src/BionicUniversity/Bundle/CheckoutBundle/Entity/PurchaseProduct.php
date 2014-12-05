@@ -15,7 +15,7 @@ class PurchaseProduct
     /**
      * @var integer
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -23,21 +23,29 @@ class PurchaseProduct
 
     /**
      * @var integer
-     * @ORM\Column(name="quantity")
+     * @ORM\Column(type="integer")
      */
     private $quantity;
 
     /**
-     * @var OrderProduct
+     * @var PurchaseProduct
      * @ORM\ManyToOne(targetEntity="BionicUniversity\Bundle\CheckoutBundle\Entity\Purchase",inversedBy="products" )
      */
     private $purchase;
+    /**
+     * @var ProductInterface
+     */
+    private $product;
+    /**
+     * @var float
+     */
+    private $price;
 
     //    private Product from product-bundle $product;
 
 
     /**
-     * @return OrderProduct
+     * @return PurchaseProduct
      */
     public function getPurchase()
     {
@@ -45,9 +53,9 @@ class PurchaseProduct
     }
 
     /**
-     * @param OrderProduct $purchase
+     * @param PurchaseProduct $purchase
      */
-    public function setPurchase($purchase)
+    public function setPurchase(PurchaseProduct $purchase)
     {
         $this->purchase = $purchase;
     }
@@ -55,8 +63,6 @@ class PurchaseProduct
 
 
     /**
-     * Get id
-     *
      * @return integer
      */
     public function getId()
