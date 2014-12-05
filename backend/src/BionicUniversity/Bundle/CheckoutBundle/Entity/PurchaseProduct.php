@@ -2,15 +2,18 @@
 
 namespace BionicUniversity\Bundle\CheckoutBundle\Entity;
 
+
+use BionicUniversity\Bundle\ProductBundle\Entity\Product;
+use BionicUniversity\Bundle\ProductBundle\Entity\ProductPurchaseProductInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * OrderProduct
+ * PurchaseProduct
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class PurchaseProduct
+class PurchaseProduct implements ProductPurchaseProductInterface
 {
     /**
      * @var integer
@@ -20,6 +23,38 @@ class PurchaseProduct
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * @param int $quantity
+     */
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
 
     /**
      * @var integer
@@ -32,16 +67,36 @@ class PurchaseProduct
      * @ORM\ManyToOne(targetEntity="BionicUniversity\Bundle\CheckoutBundle\Entity\Purchase",inversedBy="products" )
      */
     private $purchase;
+
     /**
-     * @var ProductInterface
+     * @var Product
+     * @ORM\ManyToOne(targetEntity="PurchaseProductProductInterface",inversedBy="purchaseProducts")
      */
     private $product;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    /**
+     * @param mixed $product
+     */
+    public function setProduct( PurchaseProductProductInterface $product)
+    {
+        $this->product = $product;
+    }
+
     /**
      * @var float
+     * @ORM\Column(type="integer")
      */
     private $price;
 
-    //    private Product from product-bundle $product;
+
 
 
     /**
