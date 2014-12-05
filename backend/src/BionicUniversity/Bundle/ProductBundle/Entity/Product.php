@@ -3,7 +3,10 @@
 namespace BionicUniversity\Bundle\ProductBundle\Entity;
 
 use BionicUniversity\Bundle\CatalogBundle\Entity\CategoryProductInterface;
+
+use BionicUniversity\Bundle\CheckoutBundle\Entity\PurchaseProductProductInterface;
 use BionicUniversity\Bundle\ProductBundle\Entity\Product\Status;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Product implements CategoryProductInterface
+class Product implements CategoryProductInterface, PurchaseProductProductInterface
 {
     /**
      * @var integer
@@ -56,6 +59,44 @@ class Product implements CategoryProductInterface
      * @ORM\ManyToOne(targetEntity="BionicUniversity\Bundle\ProductBundle\Entity\Product\Status", inversedBy="products" )
      */
     private $status;
+
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="ProductPurchaseProductInterface", mappedBy="product")
+     */
+    private $purchaseProducts;
+
+
+    /**
+     * @param mixed $purchaseProducts
+     */
+    public function setPurchaseProducts($purchaseProducts)
+    {
+        $this->purchaseProducts = $purchaseProducts;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getPurchaseProducts()
+    {
+        return $this->purchaseProducts;
+    }
+
+
+
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+
+
 
     /**
      * @return int
@@ -177,5 +218,7 @@ class Product implements CategoryProductInterface
     {
         return $this->price;
     }
+
+
 }
 

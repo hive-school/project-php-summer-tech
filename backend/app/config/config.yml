@@ -63,6 +63,8 @@ doctrine:
         resolve_target_entities:
             BionicUniversity\Bundle\CatalogBundle\Entity\CategoryProductInterface: BionicUniversity\Bundle\ProductBundle\Entity\Product
             BionicUniversity\Bundle\ProductBundle\Entity\ProductCategoryInterface: BionicUniversity\Bundle\CatalogBundle\Entity\Category
+            BionicUniversity\Bundle\ProductBundle\Entity\ProductPurchaseProductInterface: BionicUniversity\Bundle\CheckoutBundle\Entity\PurchaseProduct
+            BionicUniversity\Bundle\CheckoutBundle\Entity\PurchaseProductProductInterface: BionicUniversity\Bundle\ProductBundle\Entity\Product
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
         naming_strategy: doctrine.orm.naming_strategy.underscore
