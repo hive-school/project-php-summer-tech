@@ -2,6 +2,7 @@
 
 namespace BionicUniversity\Bundle\ProductBundle\Entity;
 
+use BionicUniversity\Bundle\CatalogBundle\Entity\CategoryProductInterface;
 use BionicUniversity\Bundle\ProductBundle\Entity\Product\Status;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -11,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity
  */
-class Product
+class Product implements CategoryProductInterface
 {
     /**
      * @var integer
@@ -37,9 +38,9 @@ class Product
     private $description;
 
     /**
-     * @var CategoryInterface
+     * @var mixed
      *
-     * @ORM\Column(name="category", type="integer")
+     * @ORM\ManyToOne(targetEntity="BionicUniversity\Bundle\ProductBundle\Entity\ProductCategoryInterface", inversedBy="products")
      */
     private $category;
 
@@ -138,7 +139,7 @@ class Product
      *
      * @return Product
      */
-    public function setCategory($category)
+    public function setCategory(ProductCategoryInterface $category)
     {
         $this->category = $category;
 
@@ -146,9 +147,7 @@ class Product
     }
 
     /**
-     * Get category
-     *
-     * @return integer
+     * {@inheritdoc}
      */
     public function getCategory()
     {
