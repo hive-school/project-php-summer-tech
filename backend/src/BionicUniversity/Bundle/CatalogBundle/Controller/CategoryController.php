@@ -2,6 +2,7 @@
 
 namespace BionicUniversity\Bundle\CatalogBundle\Controller;
 
+use Doctrine\Common\Collections\Criteria;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -28,8 +29,8 @@ class CategoryController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $entities = $em->getRepository('BionicUniversityCatalogBundle:Category')->findAll();
+
 
         return array(
             'entities' => $entities,

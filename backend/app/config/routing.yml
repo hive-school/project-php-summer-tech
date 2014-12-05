@@ -1,3 +1,8 @@
+bionic_university_checkout:
+    resource: "@BionicUniversityCheckoutBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 bionic_university_web:
     resource: "@BionicUniversityWebBundle/Controller/"
     type:     annotation
