@@ -92,7 +92,7 @@ class PurchaseProduct implements ProductPurchaseProductInterface
 
     /**
      * @var float
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="float")
      */
     private $price;
 
