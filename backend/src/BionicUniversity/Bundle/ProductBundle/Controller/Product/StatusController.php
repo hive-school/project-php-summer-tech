@@ -23,7 +23,7 @@ class StatusController extends Controller
      *
      * @Route("/", name="product_status")
      * @Method("GET")
-     * @Template("BionicUniversityProductBundle:Product\Status:index.html.twig")
+     * @Template("BionicUniversityProductBundle:Product\Status:subcategoryProducts.html.twig")
      */
     public function indexAction()
     {

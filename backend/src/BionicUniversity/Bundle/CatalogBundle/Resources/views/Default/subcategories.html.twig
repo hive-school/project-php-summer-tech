@@ -1,0 +1,23 @@
+{% extends 'BionicUniversityWebBundle::layout.html.twig' %}
+{% block content %}
+
+    <h3>
+        Subcategories of {{  category.name }}
+    </h3>
+    <table>
+
+         {# table body #}
+        {% for category in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td>{{ category.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+
+
+{% endblock %}

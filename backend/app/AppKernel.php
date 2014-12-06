@@ -23,6 +23,8 @@ class AppKernel extends Kernel
             // Restful
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
+            //knp
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         $applicationBundles = [

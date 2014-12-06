@@ -1,0 +1,30 @@
+{% extends 'BionicUniversityWebBundle::layout.html.twig' %}
+{% block content %}
+
+    <h3>
+        Products  of {{  category.name }} ({{  pagination.getTotalItemCount }})
+    </h3>
+
+    <table>
+        <tr>
+            {# sorting of properties based on query components #}
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+
+        {# table body #}
+        {% for product in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.price }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+{% endblock %}

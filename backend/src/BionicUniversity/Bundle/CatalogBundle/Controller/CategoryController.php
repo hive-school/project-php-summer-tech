@@ -26,11 +26,10 @@ class CategoryController extends Controller
      * @Method("GET")
      * @Template()
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $entities = $em->getRepository('BionicUniversityCatalogBundle:Category')->findAll();
-
 
         return array(
             'entities' => $entities,
@@ -141,6 +140,8 @@ class CategoryController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Category entity.');
         }
+
+
 
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
