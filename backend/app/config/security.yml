@@ -20,7 +20,7 @@ security:
 #                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
 #                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
         in_database:
-            entity: { class: BionicUniversity\Bundle\UserBundle\Entity\User, property: username }
+            entity: { class: BionicUniversity\Bundle\UserBundle\Entity\User }
 
     # the main part of the security, where you can set up firewalls
     # for specific sections of your app
