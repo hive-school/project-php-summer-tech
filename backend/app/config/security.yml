@@ -45,8 +45,20 @@ security:
             #http_basic:
             #    realm: "Secured Demo Area"
 
+        secured_area:
+            pattern:   ^/
+            anonymous: ~
+            form_login:
+                login_path: user_sign_in
+                check_path: user_sign_in_check
+            logout:
+                path:   user_sign_out
+                target: index
+
     # with these settings you can restrict or allow access for different parts
     # of your application based on roles, ip, host or methods
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+        - { path: ^/%locale%/admin/user/sign-in, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/%locale%/admin/, roles: ROLE_ADMIN }
