@@ -34,6 +34,11 @@ class User implements AdvancedUserInterface, \Serializable
     private $password;
 
     /**
+     * @ORM\Column(type="string", length=32)
+     */
+    private $salt;
+
+    /**
      * @ORM\Column(type="string", length=60, unique=true)
      */
     private $email;
@@ -52,9 +57,8 @@ class User implements AdvancedUserInterface, \Serializable
 
     public function __construct()
     {
+        $this->salt = md5(uniqid(null, true));
         $this->isActive = true;
-        // may not be needed, see section on salt below
-        // $this->salt = md5(uniqid(null, true));
         $this->roles = new ArrayCollection();
     }
 
@@ -76,32 +80,6 @@ class User implements AdvancedUserInterface, \Serializable
     public function isEnabled()
     {
         return $this->isActive;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getSalt()
-    {
-        // you *may* need a real salt depending on your encoder
-        // see section on salt below
-        return null;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /**
@@ -165,6 +143,15 @@ class User implements AdvancedUserInterface, \Serializable
         return $this->id;
     }
 
+
+    /**
+     * @inheritDoc
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
     /**
      * Set username
      *
@@ -180,6 +167,14 @@ class User implements AdvancedUserInterface, \Serializable
     }
 
     /**
+     * @inheritDoc
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
      * Set password
      *
      * @param string $password
@@ -191,6 +186,16 @@ class User implements AdvancedUserInterface, \Serializable
         $this->password = $password;
 
         return $this;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSalt()
+    {
+        // you *may* need a real salt depending on your encoder
+        // see section on salt below
+        return $this->salt;
     }
 
     /**
