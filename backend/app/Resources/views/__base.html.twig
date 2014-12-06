@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome to Interstellar market!{% endblock %}</title>
+    <link type="text/css" rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    {% block stylesheets %}
+        {% stylesheets '../app/Resources/public/css/vendor/bootstrap.min.css'
+                       '../app/Resources/public/css/interstellar.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
+</head>
+<body>
+    <div class="page-content">
+        <header>
+            {% block header %}
+            {% endblock %}
+        </header>
+        <main class="container">
+            {% block body %}
+            {% endblock %}
+        </main>
+    </div>
+    <footer class="page-footer">
+        <div class="container">
+            {% block footer %}
+            {% endblock %}
+        </div>
+    </footer>
+    {% block javascripts %}
+        {% javascripts '../app/Resources/public/js/vendor/jquery.min.js'
+                       '../app/Resources/public/js/interstellar.js'%}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endblock %}
+</body>
+</html>

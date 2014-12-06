@@ -1,13 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="ie-fix">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <title>{% block title %}Welcome to Interstellar market!{% endblock %}</title>
-    {% block stylesheets %}{% endblock %}
+    <link type="text/css" rel="stylesheet"
+          href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    {% block stylesheets %}
+        {% stylesheets '../app/Resources/public/css/vendor/bootstrap.min.css'
+                        '../app/Resources/public/css/vendor/jasny-bootstrap.min.css'
+                        '../app/Resources/public/css/interstellar.css'%}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
 </head>
+
 <body>
-{% block body %}
+<!--[if lt IE 10]>
+<p class="alert alert-danger well-fullwidth text-center no-mb">You are using an <strong>outdated</strong> browser.
+    Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div id="pageMask" class="page-mask"></div>
+<div id="progressMask" class="page-mask"><i class="fa fa-cog fa-spin"></i></div>
+
+<div class="page-content">
+
+    <header class="bg-alpha-90">
+        <div class="container pt">
+            <div class="row">
+                <div class="col-xs-10 col-sm-5 col-md-4 col-lg-3 hidden-xs hidden-sm">
+                    <div class="logo mb">
+                        {% image '../app/Resources/public/img/logo.png' %}
+                            <img src="{{ asset_url }}" alt="Interstellar logo" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                </div>
+                <div class="col-xs-2 visible-xs visible-sm">
+                    <i class="fa fa-bars fa-2x" data-toggle="offcanvas" data-target="#sideNav" data-canvas="body"></i>
+                </div>
+                <div class="col-xs-10 visible-xs visible-sm text-right">
+                    <div class="logo mb">
+                        {% image '../app/Resources/public/img/logo.png' %}
+                            <img src="{{ asset_url }}" alt="Interstellar logo" class="img-responsive">
+                        {% endimage %}
+                    </div>
+                </div>
+            </div>
+            {% block header %}
+            {% endblock %}
+        </div>
+        <div class="well well-fullwidth">
+            <div class="container text-right">
+                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginForm">
+                    <i class="fa fa-sign-in"></i>&nbsp;Login
+                </button>
+                <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Register</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block body %}
+        {% endblock %}
+    </main>
+</div>
+<footer class="page-footer">
+    <div class="container pv">
+        TEST
+        {% block footer %}
+        {% endblock %}
+    </div>
+</footer>
+
+
+<section class="modal fade" id="loginForm">
+    <div class="modal-dialog modal-sm">
+        {% block modal %}
+        {% endblock %}
+    </div>
+</section>
+
+{% block javascripts %}
+    {% javascripts '../app/Resources/public/js/vendor/jquery.min.js'
+        '../app/Resources/public/js/vendor/bootstrap.min.js'
+        '../app/Resources/public/js/vendor/jasny-bootstrap.min.js'
+        '../app/Resources/public/js/interstellar.js'%}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
-{% block javascripts %}{% endblock %}
+
 </body>
 </html>
