@@ -12,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="BionicUniversity\Bundle\UserBundle\Entity\UserRepository")
+ * ORM\EntityListeners({"BionicUniversity\Bundle\UserBundle\EventListener\UserListener"})
  */
 class User implements AdvancedUserInterface, \Serializable
 {
