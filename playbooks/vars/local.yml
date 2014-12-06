@@ -1,7 +1,7 @@
 ---
-project_root: /var/www/interstellar
-nginx_document_root: /var/www/interstellar/backend/web
-nginx_server_name: interstellar.localhost
+project_root: /var/www/interstellar.dev
+nginx_document_root: /var/www/interstellar.dev/backend/web
+nginx_server_name: interstellar.dev
 nginx_index_file: app_dev.php
 mysql_root_password:
 install_jdk: true
