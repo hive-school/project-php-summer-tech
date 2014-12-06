@@ -2,6 +2,8 @@
 
 namespace BionicUniversity\Bundle\UserBundle\Controller;
 
+use BionicUniversity\Bundle\UserBundle\Entity\Role;
+use BionicUniversity\Bundle\UserBundle\Form\SignUpType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -18,6 +20,43 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
  */
 class UserController extends Controller
 {
+    /**
+     * @Route("/sign-up", name="user_sign_up")
+     * @Template("BionicUniversityUserBundle:User:sign-up.html.twig")
+     */
+    public function signUpAction(Request $request)
+    {
+        $entity = new User();
+        $form = $this->createForm(new SignUpType(), $entity);
+
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+            if ($form->isValid()) {
+                $em = $this->getDoctrine()->getManager();
+                $role = $em->getRepository('BionicUniversityUserBundle:Role')->findOneByRole('ROLE_USER');
+                if (! $role) {
+                    $role = new Role();
+                    $role->setName('User');
+                    $role->setRole('ROLE_USER');
+                    $em->persist($role);
+                }
+                $entity->addRole($role);
+                $entity->setIsActive(true);
+                $em->persist($entity);
+
+                $em->flush();
+
+                $request->getSession()->getFlashBag()->add('User successfully sign up');
+
+                return $this->redirect($this->generateUrl('user_sign_in'));
+            }
+        }
+
+        return [
+            'form' => $form->createView(),
+        ];
+    }
+
     /**
      * @Route("/sign-in", name="user_sign_in")
      * @Template("BionicUniversityUserBundle:User:sign-in.html.twig")

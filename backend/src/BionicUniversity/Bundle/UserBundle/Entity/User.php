@@ -2,8 +2,11 @@
 
 namespace BionicUniversity\Bundle\UserBundle\Entity;
 
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +15,9 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="BionicUniversity\Bundle\UserBundle\Entity\UserRepository")
+ * @UniqueEntity("username")
+ * @UniqueEntity("email")
+ *
  * ORM\EntityListeners({"BionicUniversity\Bundle\UserBundle\EventListener\UserListener"})
  */
 class User implements AdvancedUserInterface, \Serializable
@@ -30,6 +36,7 @@ class User implements AdvancedUserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=64)
+     * @Length(min="8")
      */
     private $password;
 
@@ -40,6 +47,7 @@ class User implements AdvancedUserInterface, \Serializable
 
     /**
      * @ORM\Column(type="string", length=60, unique=true)
+     * @Assert\Email()
      */
     private $email;
 
