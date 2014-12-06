@@ -5,6 +5,7 @@ namespace BionicUniversity\Bundle\UserBundle\EventListener;
 use BionicUniversity\Bundle\UserBundle\Entity\User;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Symfony\Component\Security\Core\Encoder\EncoderFactory;
 
 /**
@@ -33,22 +34,30 @@ class UserSubscriber implements EventSubscriber
 
     public function prePersist(LifecycleEventArgs $args)
     {
-        $this->handle($args);
+        $entity = $args->getEntity();
+
+        if ($entity instanceof User) {
+            $this->encodePassword($entity);
+        }
     }
 
-    public function preUpdate(LifecycleEventArgs $args)
-    {
-        $this->handle($args);
-    }
-
-    private function handle(LifecycleEventArgs $args)
+    public function preUpdate(PreUpdateEventArgs $args)
     {
         $entity = $args->getEntity();
 
         if ($entity instanceof User) {
-            $encoder = $this->encoderFactory->getEncoder($entity);
-            $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
-            $entity->setPassword($password);
+            if ($args->hasChangedField('password')) {
+                $this->encodePassword($entity);
+            }
         }
+    }
+
+    private function encodePassword(User $entity)
+    {
+        $encoder = $this->encoderFactory->getEncoder($entity);
+        $password = $encoder->encodePassword($entity->getPassword(), $entity->getSalt());
+        $entity->setPassword($password);
+
+        return $entity;
     }
 }
