@@ -21,7 +21,10 @@ class LoadProduct extends AbstractFixture implements OrderedFixtureInterface
         $product->setCategory($category);
         $product->setDescription('Some text description');
 
-        $product->setPrice(10.00);
+        $status = $manager->getRepository('BionicUniversityProductBundle:Product\Status')->findOneBy([]);
+        $product->setStatus($status);
+
+        $product->setPrice(9.99);
         $manager->persist($product);
         $manager->flush();
     }
@@ -32,7 +35,7 @@ class LoadProduct extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 2;
+        return 3;
     }
 
 }
