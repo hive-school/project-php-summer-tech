@@ -4,6 +4,20 @@
     <header>
         <ul>
             <li>
+                Langs:
+                {% if 'ru' == app.request.locale %}
+                    <strong>ru</strong>
+                {% else %}
+                    <a href="{{ app.request.pathInfo|replace({('/' ~ app.request.locale ~ '/'): '/ru/'}) }}">ru</a>
+                {% endif %}
+                |
+                {% if 'en' == app.request.locale %}
+                    <strong>en</strong>
+                {% else %}
+                    <a href="{{ app.request.pathInfo|replace({('/' ~ app.request.locale ~ '/'): '/en/'}) }}">en</a>
+                {% endif %}
+            </li>
+            <li>
                 <a href="{{ path('index') }}">
                     {{ 'welcome_message'|trans }}
                 </a>
