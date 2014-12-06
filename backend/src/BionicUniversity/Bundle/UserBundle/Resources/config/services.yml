@@ -1,0 +1,7 @@
+services:
+    bu_user.event_listener.user:
+        public: false
+        class: BionicUniversity\Bundle\UserBundle\EventListener\UserSubscriber
+        arguments: ['@security.encoder_factory']
+        tags:
+            -  { name: doctrine.event_subscriber }

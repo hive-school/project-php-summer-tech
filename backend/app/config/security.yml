@@ -3,7 +3,9 @@
 security:
     # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
     encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+#        Symfony\Component\Security\Core\User\User: plaintext
+        BionicUniversity\Bundle\UserBundle\Entity\User:
+            algorithm: sha1
 
     # http://symfony.com/doc/current/book/security.html#hierarchical-roles
     role_hierarchy:
@@ -12,11 +14,13 @@ security:
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+#        in_memory:
+#            memory:
+#                users:
+#                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+#                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        in_database:
+            entity: { class: BionicUniversity\Bundle\UserBundle\Entity\User, property: username }
 
     # the main part of the security, where you can set up firewalls
     # for specific sections of your app

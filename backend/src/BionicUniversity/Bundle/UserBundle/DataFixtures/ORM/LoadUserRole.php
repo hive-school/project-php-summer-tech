@@ -19,19 +19,19 @@ class LoadUserRole extends AbstractFixture implements OrderedFixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        /** @var User $user */
-        $user = $this->getReference('user-admin');
-        /** @var Role $role */
-        $role = $this->getReference('role-admin');
-        $user->addRole($role);
-
-        /** @var User $user */
-        $user = $this->getReference('user');
-        /** @var Role $role */
-        $role = $this->getReference('role-user');
-        $user->addRole($role);
-
-        $manager->flush();
+//        /** @var User $user */
+//        $user = $this->getReference('user-admin');
+//        /** @var Role $role */
+//        $role = $this->getReference('role-admin');
+//        $user->addRole($role);
+//
+//        /** @var User $user */
+//        $user = $this->getReference('user');
+//        /** @var Role $role */
+//        $role = $this->getReference('role-user');
+//        $user->addRole($role);
+//
+//        $manager->flush();
     }
 
     /**
