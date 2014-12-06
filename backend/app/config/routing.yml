@@ -1,3 +1,22 @@
+bionic_university_delivery:
+    resource: "@BionicUniversityDeliveryBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%/
+        permanent: true
+
+bionic_university_user:
+    resource: "@BionicUniversityUserBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|ru
+
 bionic_university_web:
     resource: "@BionicUniversityWebBundle/Controller/"
     type:     annotation
@@ -12,3 +31,16 @@ bionic_university_catalog:
     requirements:
         _locale: en|ru
 
+bionic_university_product:
+    resource: "@BionicUniversityProductBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|ru
+
+#bionic_university_product_status:
+#    resource: "@BionicUniversityProductBundle/Controller/Product/"
+#    type:     annotation
+#    prefix:   /{_locale}
+#    requirements:
+#        _locale: en|ru
