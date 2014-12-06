@@ -107,9 +107,9 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
     }
 
     /**
-     * @param int $status
+     * @param Status $status
      */
-    public function setStatus($status)
+    public function setStatus(Status $status)
     {
         $this->status = $status;
     }
