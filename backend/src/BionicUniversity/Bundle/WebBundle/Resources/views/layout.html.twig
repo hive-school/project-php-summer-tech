@@ -2,9 +2,27 @@
 
 {% block body %}
     <header>
-        <a href="{{ path('index') }}">
-            {{ 'welcome_message'|trans }}
-        </a>
+        <ul>
+            <li>
+                <a href="{{ path('index') }}">
+                    {{ 'welcome_message'|trans }}
+                </a>
+            </li>
+            {% if app.user %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li>
+                        <a href="{{ path('admin') }}">Control Panel</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a href="{{ path('user_sign_out') }}">Sign Out</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{{ path('user_sign_in') }}">Sign In</a>
+                </li>
+            {% endif %}
+        </ul>
 
         <nav>
             <ul>
