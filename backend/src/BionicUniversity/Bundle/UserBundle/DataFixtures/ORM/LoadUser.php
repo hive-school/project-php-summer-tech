@@ -20,7 +20,7 @@ class LoadUser extends AbstractFixture implements OrderedFixtureInterface
     {
         $user = new User();
         $user->setUsername('admin');
-        $user->setPassword('admin');
+        $user->setPassword('adminpass');
         $user->setEmail('admin@local.host');
         $user->setIsActive(true);
         $manager->persist($user);
@@ -28,7 +28,7 @@ class LoadUser extends AbstractFixture implements OrderedFixtureInterface
 
         $user = new User();
         $user->setUsername('user');
-        $user->setPassword('user');
+        $user->setPassword('userpass');
         $user->setEmail('user@local.host');
         $user->setIsActive(true);
         $manager->persist($user);
