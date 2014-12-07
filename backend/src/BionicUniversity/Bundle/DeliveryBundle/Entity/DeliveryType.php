@@ -33,7 +33,7 @@ class DeliveryType
      *
      * @ORM\Column(name="enabled", type="boolean")
      */
-    private $enabled;
+    private $enabled = true;
 
 
     /**
@@ -92,6 +92,14 @@ class DeliveryType
     public function getEnabled()
     {
         return $this->enabled;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->name;
     }
 }
 
