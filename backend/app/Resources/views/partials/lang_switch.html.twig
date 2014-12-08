@@ -1,0 +1,8 @@
+<div class="btn-group btn-group-sm">
+    <a class="btn btn-primary {% if 'ru' == app.request.locale %}disabled{% endif %}"
+       href="{{ app.request.pathInfo|replace({('/' ~ app.request.locale ~ '/'): '/ru/'}) }}"
+    >RU</a>
+    <a class="btn btn-primary {% if 'en' == app.request.locale %}disabled{% endif %}"
+       href="{{ app.request.pathInfo|replace({('/' ~ app.request.locale ~ '/'): '/en/'}) }}"
+    >EN</a>
+</div>

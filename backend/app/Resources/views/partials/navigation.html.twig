@@ -1,0 +1,9 @@
+{% if app.user %}
+    {% if is_granted('ROLE_ADMIN') %}
+        <a class="btn btn-warning" href="{{ path('admin') }}">Control Panel</a>
+    {% endif %}
+    <a class="btn btn-default" href="{{ path('user_sign_out') }}">Sign Out</a>
+{% else %}
+    <a class="btn btn-link" href="{{ path('user_sign_in') }}"><i class="fa fa-sign-in"></i>&nbsp;Login</a>
+    <a class="btn btn-primary" href="{{ path('user_sign_up') }}"><i class="fa fa-plus"></i>&nbsp;Register</a>
+{% endif %}

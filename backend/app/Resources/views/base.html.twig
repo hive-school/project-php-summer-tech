@@ -35,26 +35,18 @@
                         {% endimage %}
                     </div>
                 </div>
+                <div class="col-xs-2 col-sm-7 col-md-8 col-lg-9 hidden-xs hidden-sm text-right">
+                    {% include 'partials/lang_switch.html.twig' %}
+                </div>
                 <div class="col-xs-2 visible-xs visible-sm">
                     <i class="fa fa-bars fa-2x" data-toggle="offcanvas" data-target="#sideNav" data-canvas="body"></i>
                 </div>
-                <div class="col-xs-10 visible-xs visible-sm text-right">
-                    <div class="logo mb">
-                        {% image '../app/Resources/public/img/logo.png' %}
-                            <img src="{{ asset_url }}" alt="Interstellar logo" class="img-responsive">
-                        {% endimage %}
-                    </div>
-                </div>
+
             </div>
-            {% block header %}
-            {% endblock %}
         </div>
         <div class="well well-fullwidth">
             <div class="container text-right">
-                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#loginForm">
-                    <i class="fa fa-sign-in"></i>&nbsp;Login
-                </button>
-                <a href="#" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Register</a>
+                {% include 'partials/navigation.html.twig' %}
             </div>
         </div>
     </header>
@@ -64,21 +56,16 @@
         {% endblock %}
     </main>
 </div>
+
 <footer class="page-footer">
     <div class="container pv">
-        TEST
+        <p>&copy; Bionic University</p>
         {% block footer %}
+
         {% endblock %}
     </div>
 </footer>
 
-
-<section class="modal fade" id="loginForm">
-    <div class="modal-dialog modal-sm">
-        {% block modal %}
-        {% endblock %}
-    </div>
-</section>
 
 {% block javascripts %}
     {% javascripts '../app/Resources/public/js/vendor/jquery.min.js'
