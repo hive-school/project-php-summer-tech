@@ -29,7 +29,9 @@
         "friendsofsymfony/rest-bundle": "1.5.*@dev",
         "jms/serializer-bundle": "0.13.*@dev",
 
-        "knplabs/knp-paginator-bundle": "2.4.*@dev"
+        "knplabs/knp-paginator-bundle": "2.4.*@dev",
+
+        "bocharsky-bw/security-checker-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

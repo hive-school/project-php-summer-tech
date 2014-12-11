@@ -1,3 +1,8 @@
+_bw_security_checker:
+    resource: "@BWSecurityCheckerBundle/Controller/"
+    type: annotation
+    prefix: /_bw
+
 _wdt:
     resource: "@WebProfilerBundle/Resources/config/routing/wdt.xml"
     prefix:   /_wdt

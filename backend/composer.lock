@@ -4,8 +4,56 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ec1038db2288ccf178b1007f4f0d75c",
+    "hash": "97b7efee7e520054355e1a2880e899c5",
     "packages": [
+        {
+            "name": "bocharsky-bw/security-checker-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bocharsky-bw/SecurityCheckerBundle.git",
+                "reference": "523edc57a849af58e86f7bcc728e809a3375c4eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bocharsky-bw/SecurityCheckerBundle/zipball/523edc57a849af58e86f7bcc728e809a3375c4eb",
+                "reference": "523edc57a849af58e86f7bcc728e809a3375c4eb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "sensiolabs/security-checker": "~2.0",
+                "symfony/framework-bundle": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BW\\SecurityCheckerBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "victor",
+                    "email": "bocharsky.bw@gmail.com"
+                }
+            ],
+            "description": "Security Checker wrapper for Symfony Web Debug Toolbar",
+            "homepage": "https://github.com/bocharsky-bw/SecurityCheckerBundle",
+            "keywords": [
+                "Symfony2",
+                "bundle",
+                "bw",
+                "checker",
+                "debug",
+                "security",
+                "toolbar"
+            ],
+            "time": "2014-12-11 11:31:34"
+        },
         {
             "name": "doctrine/annotations",
             "version": "v1.2.1",
@@ -950,12 +998,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "6bae13c309ea474041ae868f3648f0e2c5452a14"
+                "reference": "6ec796c5a119b39b191e1c974031ea38ba8fbc6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/6bae13c309ea474041ae868f3648f0e2c5452a14",
-                "reference": "6bae13c309ea474041ae868f3648f0e2c5452a14",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/6ec796c5a119b39b191e1c974031ea38ba8fbc6d",
+                "reference": "6ec796c5a119b39b191e1c974031ea38ba8fbc6d",
                 "shasum": ""
             },
             "require": {
@@ -1019,7 +1067,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2014-12-02 14:12:56"
+            "time": "2014-12-11 08:38:29"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2599,21 +2647,21 @@
     "packages-dev": [
         {
             "name": "sensio/generator-bundle",
-            "version": "v2.4.3",
+            "version": "v2.5.0",
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "2e2d8096a65cfec2658bd3f21e506fa1058b962e"
+                "reference": "0225fcd08e94de2165ffa85de50c3c9d9592e96b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/2e2d8096a65cfec2658bd3f21e506fa1058b962e",
-                "reference": "2e2d8096a65cfec2658bd3f21e506fa1058b962e",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/0225fcd08e94de2165ffa85de50c3c9d9592e96b",
+                "reference": "0225fcd08e94de2165ffa85de50c3c9d9592e96b",
                 "shasum": ""
             },
             "require": {
-                "symfony/console": "~2.0",
+                "symfony/console": "~2.5",
                 "symfony/framework-bundle": "~2.2"
             },
             "require-dev": {
@@ -2624,7 +2672,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.4.x-dev"
+                    "dev-master": "2.5.x-dev"
                 }
             },
             "autoload": {
@@ -2643,7 +2691,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2014-12-04 05:46:34"
+            "time": "2014-12-07 18:30:52"
         }
     ],
     "aliases": [],
@@ -2656,7 +2704,8 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "friendsofsymfony/rest-bundle": 20,
         "jms/serializer-bundle": 20,
-        "knplabs/knp-paginator-bundle": 20
+        "knplabs/knp-paginator-bundle": 20,
+        "bocharsky-bw/security-checker-bundle": 20
     },
     "prefer-stable": false,
     "platform": {
