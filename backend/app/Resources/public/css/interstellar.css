@@ -166,3 +166,7 @@ body {
         position: absolute;
     }
 }
+
+form > div > div > ul {
+    color: red;
+}

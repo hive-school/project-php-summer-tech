@@ -64,5 +64,5 @@ security:
     # http://symfony.com/doc/current/book/security.html#security-book-access-control-matching-options
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
-        - { path: ^/%locale%/admin/user/sign-in, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/%locale%/user/sign-in, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/%locale%/admin/, roles: ROLE_ADMIN }

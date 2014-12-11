@@ -15,10 +15,26 @@ class SignUpType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username', 'text')
-            ->add('password', 'password')
-            ->add('email', 'email')
-            ->add('signUp', 'submit')
+            ->add('username', 'text', [
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('password', 'password', [
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('email', 'email', [
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('signUp', 'submit', [
+                'attr' => [
+                    'class' => 'btn btn-success pull-right',
+                ],
+            ])
         ;
     }
     
