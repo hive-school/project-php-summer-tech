@@ -57,6 +57,5 @@ class ProductType extends AbstractType
         );
 
         $product->setPath($newName);
-        $product->setImage(null);
     }
 }
