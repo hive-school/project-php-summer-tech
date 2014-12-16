@@ -47,6 +47,10 @@ body {
     width: 250px;
 }
 
+main{
+    background: #fff;
+}
+
 .page-content {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 auto;

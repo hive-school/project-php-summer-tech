@@ -85,14 +85,16 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
     }
 
 
-
-
     /**
      * @param int $id
+     *
+     * @return $this
      */
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
     }
 
 

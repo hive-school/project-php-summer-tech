@@ -1,0 +1,14 @@
+default:
+  extensions:
+    Behat\Symfony2Extension: ~
+    Behat\MinkExtension:
+          sessions:
+            default:
+              symfony2: ~
+
+  suites:
+    checkout:
+      contexts:
+        - BionicUniversity\Bundle\CheckoutBundle\Behat\CartContext
+        - BionicUniversity\Bundle\ProductBundle\Behat\ProductContext
+        - Behat\MinkExtension\Context\MinkContext
