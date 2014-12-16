@@ -3,13 +3,13 @@
 {% block body -%}
     <h1>Role creation</h1>
 
-    {{ form(form) }}
+    <ul class="list-inline">
+        <li>
+            <a href="{{ path('role') }}" class="btn btn-warning">
+                Back to the list
+            </a>
+        </li>
+    </ul>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('role') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {% include 'BionicUniversityUserBundle:Role:form.html.twig' %}
 {% endblock %}
