@@ -6,49 +6,23 @@
             <h3 class="panel-title">Sign Up:</h3>
         </div>
         <div class="panel-body">
-
-             {{ form(form) }}
-
-            {# Form abow is shit! Form below is cool! #}
-
-            {#<form action="{{ path('user_create') }}" method="post">#}
-                {#<input type="hidden" name="_target_path" value="{{ path('index') }}" />#}
-                {#<div class="form-group">#}
-                    {#<label for="username" class="control-label">Username:</label>#}
-                    {#<div class="input-group">#}
-                        {#<span class="input-group-addon">#}
-                            {#<i class="fa fa-user"></i>#}
-                        {#</span>#}
-                        {#<input type="text" id="username" name="bionicuniversity_bundle_userbundle_user[username]" value="{{ last_username }}" class="form-control">#}
-                    {#</div>#}
-                {#</div>#}
-                {#<div class="form-group">#}
-                    {#<label for="password" class="control-label">Password:</label>#}
-                    {#<div class="input-group">#}
-                        {#<span class="input-group-addon">#}
-                            {#<i class="fa fa-lock"></i>#}
-                        {#</span>#}
-                        {#<input type="password" id="password" name="bionicuniversity_bundle_userbundle_user[password]" class="form-control">#}
-                    {#</div>#}
-                {#</div>#}
-                {#<div class="form-group">#}
-                    {#<label for="email" class="control-label">Password:</label>#}
-                    {#<div class="input-group">#}
-                        {#<span class="input-group-addon">#}
-                            {#<i class="fa fa-envelope"></i>#}
-                        {#</span>#}
-                        {#<input type="email" id="email" name="bionicuniversity_bundle_userbundle_user[email]" class="form-control">#}
-                    {#</div>#}
-                {#</div>#}
-                {#&#123;&#35;#}
-                 {#If you want to control the URL the user#}
-                 {#is redirected to on success (more details below)#}
-                {#&#35;&#125;#}
-
-
-                {#<button type="submit" class="btn btn-success pull-right"><i class="fa fa-sign-in"></i>&nbsp;Login</button>#}
-            {#</form>#}
-
+            {{ form_start(form) }}
+                <div class="alert alert-danger alert-dismissible alert-fixed-top">
+                    <strong>Ooops:</strong> {{ form_errors(form) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.username) }}
+                    {{ form_widget(form.username) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.password) }}
+                    {{ form_widget(form.password) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.email) }}
+                    {{ form_widget(form.email) }}
+                </div>
+            {{ form_end(form) }}
         </div>
     </div>
 
