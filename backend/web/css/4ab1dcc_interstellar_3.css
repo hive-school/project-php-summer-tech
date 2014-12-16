@@ -1,0 +1,176 @@
+body {
+    background-attachment: fixed;
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    min-height: 100vh;
+
+}
+
+.fa-bars {
+    color: #777;
+}
+
+.page-mask {
+    background-color: rgba(0, 0, 0, 0.50);
+    color: #eee;
+    display: none;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 10000;
+}
+
+.page-mask i {
+    font-size: 80px;
+    left: 50%;
+    line-height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    position: absolute;
+    top: 50%;
+}
+
+.navmenu {
+    width: 250px;
+}
+
+main{
+    background: #fff;
+}
+
+.page-content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+}
+
+.page-footer {
+    color: #999999;
+}
+
+.page-footer .container {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+/**
+*** Internet Explorer (10+) has bug related with flex layout
+**/
+@media all and (min-width: 768px) {
+    .page-footer {
+        background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    .page-footer .container {
+        background-color: transparent;
+    }
+}
+
+@media screen and (min-width: 0\0
+) {
+    html, body {
+        height: 100%;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.pb {
+    padding-bottom: 15px;
+}
+
+.pt {
+    padding-top: 15px
+}
+
+.pv {
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.ph {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pvh {
+    padding: 15px;
+}
+
+.mb {
+    margin-bottom: 15px;
+}
+
+.no-mb {
+    margin-bottom: 0;
+}
+
+.no-mt {
+    margin-top: 0;
+}
+
+.no-mv {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.no-ph {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bg-alpha-90 {
+    background-color: rgba(255, 255, 255, 0.90);
+}
+
+.bg-alpha-95 {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.logo {
+    height: 100px;
+    overflow: hidden;
+    width: 100px;
+}
+
+
+.well-fullwidth {
+    border-left: none;
+    border-radius: 0;
+    border-right: none;
+    padding: 10px;
+}
+
+.input-group-addon .fa {
+    width: 15px;
+}
+
+@media (min-width: 768px) {
+    .landing-img {
+        position: relative;
+        right: 0;
+    }
+
+    .landing-img img {
+        position: absolute;
+    }
+}
+
+form > div > div > ul {
+    color: red;
+}

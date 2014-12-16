@@ -1,9 +1,20 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>DeliveryType list</h1>
+    <h1>
+        <i class="fa fa-truck"></i>
+        DeliveryType list
+    </h1>
 
-    <table class="records_list">
+    <ul class="list-inline">
+        <li>
+            <a href="{{ path('delivery_type_new') }}" class="btn btn-success">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,7 +30,7 @@
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.enabled }}</td>
                 <td>
-                <ul>
+                <ul class="list-inline">
                     <li>
                         <a href="{{ path('delivery_type_show', { 'id': entity.id }) }}">show</a>
                     </li>
@@ -32,12 +43,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('delivery_type_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+{% endblock %}
