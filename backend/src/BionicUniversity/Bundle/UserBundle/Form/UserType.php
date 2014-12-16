@@ -20,7 +20,9 @@ class UserType extends AbstractType
                 'required' => false,
             ])
             ->add('email')
-            ->add('isActive')
+            ->add('isActive', 'checkbox', [
+                'required' => false,
+            ])
             ->add('roles', 'entity', [
                 'class' => 'BionicUniversity\Bundle\UserBundle\Entity\Role',
                 'multiple' => true,

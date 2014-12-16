@@ -16,16 +16,19 @@ class SignUpType extends AbstractType
     {
         $builder
             ->add('username', 'text', [
+                'error_bubbling' => true,
                 'attr' => [
                     'class' => 'form-control',
                 ],
             ])
             ->add('password', 'password', [
+                'error_bubbling' => true,
                 'attr' => [
                     'class' => 'form-control',
                 ],
             ])
             ->add('email', 'email', [
+                'error_bubbling' => true,
                 'attr' => [
                     'class' => 'form-control',
                 ],
@@ -37,14 +40,14 @@ class SignUpType extends AbstractType
             ])
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'BionicUniversity\Bundle\UserBundle\Entity\User'
+            'data_class' => 'BionicUniversity\Bundle\UserBundle\Entity\User',
         ));
     }
 

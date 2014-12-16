@@ -1,0 +1,14 @@
+<table class="table table-bordered bg-alpha-95">
+    <tr>
+        <th>product</th>
+        <th>quantity</th>
+        <th>price</th>
+    </tr>
+    {% for product in products %}
+    <tr class="cart-product">
+        <td>{{ product.productId }}</td>
+        <td>{{ product.quantity }}</td>
+        <td></td>
+    </tr>
+    {% endfor %}
+</table>

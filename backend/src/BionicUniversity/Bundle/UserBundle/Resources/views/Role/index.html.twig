@@ -1,9 +1,20 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Role list</h1>
+    <h1>
+        <i class="fa fa-users"></i>
+        Role list
+    </h1>
 
-    <table class="records_list">
+    <ul class="list-inline">
+        <li>
+            <a href="{{ path('role_new') }}" class="btn btn-success">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,7 +30,7 @@
                 <td>{{ entity.name }}</td>
                 <td>{{ entity.role }}</td>
                 <td>
-                <ul>
+                <ul class="list-inline">
                     <li>
                         <a href="{{ path('role_show', { 'id': entity.id }) }}">show</a>
                     </li>
@@ -32,12 +43,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-        <ul>
-        <li>
-            <a href="{{ path('role_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+{% endblock %}
