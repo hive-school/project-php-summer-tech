@@ -8,6 +8,8 @@ use BionicUniversity\Bundle\CheckoutBundle\Entity\PurchaseProductProductInterfac
 use BionicUniversity\Bundle\ProductBundle\Entity\Product\Status;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Product
@@ -36,7 +38,7 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $description;
 
@@ -60,13 +62,57 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
      */
     private $status;
 
-
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="ProductPurchaseProductInterface", mappedBy="product")
      */
     private $purchaseProducts;
 
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $path;
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param string $path
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    /**
+     * @return UploadedFile
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * Sets file.
+     *
+     * @param UploadedFile $image
+     */
+    public function setImage(UploadedFile $image)
+    {
+        $this->image = $image;
+    }
 
     /**
      * @param mixed $purchaseProducts
@@ -84,9 +130,6 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
         return $this->purchaseProducts;
     }
 
-
-
-
     /**
      * @param int $id
      */
@@ -94,9 +137,6 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
     {
         $this->id = $id;
     }
-
-
-
 
     /**
      * @return int
@@ -113,7 +153,6 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
     {
         $this->status = $status;
     }
-
 
     /**
      * Get id
@@ -176,7 +215,7 @@ class Product implements CategoryProductInterface, PurchaseProductProductInterfa
     /**
      * Set category
      *
-     * @param integer $category
+     * @param ProductCategoryInterface $category
      *
      * @return Product
      */
