@@ -1,14 +1,15 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-            <ul>
-                {% for category in categories() %}
-                    <li>
-                        <a href="{{ path('category_index', {name: category.name}) }}">
-                            {{ category.name }}
-                        </a>
-                    </li>
-                {% endfor %}
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            {% for category in categories() %}
+                <li>
+                    <a href="{{ path('category_index', {name: category.name}) }}">
+                        {{ category.name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </nav>
 {% endblock %}

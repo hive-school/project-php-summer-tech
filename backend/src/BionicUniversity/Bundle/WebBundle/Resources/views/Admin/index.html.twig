@@ -1,51 +1,53 @@
 {% extends 'BionicUniversityWebBundle::layout.html.twig' %}
 
 {% block body %}
+    <nav class="navbar navbar-default" role="navigation">
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="{{ path('category') }}">
+                    Categories
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('product') }}">
+                    Products
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('product_status') }}">
+                    Product Statuses
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('delivery') }}">
+                    Delivery
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('delivery_status') }}">
+                    Delivery Statuses
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('delivery_type') }}">
+                    Delivery Types
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('user') }}">
+                    Users
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('role') }}">
+                    Roles
+                </a>
+            </li>
+        </ul>
+    </nav>
+
     <h1>
         <i class="fa fa-rocket"></i>
         Interstellar :: Control Panel
     </h1>
-    <ul>
-        <li>
-            <a href="{{ path('category') }}">
-                Categories
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('product') }}">
-                Products
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('product_status') }}">
-                Product Statuses
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('delivery') }}">
-                Delivery
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('delivery_status') }}">
-                Delivery Statuses
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('delivery_type') }}">
-                Delivery Types
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('user') }}">
-                Users
-            </a>
-        </li>
-        <li>
-            <a href="{{ path('role') }}">
-                Roles
-            </a>
-        </li>
-    </ul>
-
 {% endblock %}
