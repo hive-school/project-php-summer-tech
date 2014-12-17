@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bocharsky-bw/SecurityCheckerBundle.git",
-                "reference": "523edc57a849af58e86f7bcc728e809a3375c4eb"
+                "reference": "816c605e3e0dd986548d62e9f6d9367a6b908ec3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bocharsky-bw/SecurityCheckerBundle/zipball/523edc57a849af58e86f7bcc728e809a3375c4eb",
-                "reference": "523edc57a849af58e86f7bcc728e809a3375c4eb",
+                "url": "https://api.github.com/repos/bocharsky-bw/SecurityCheckerBundle/zipball/816c605e3e0dd986548d62e9f6d9367a6b908ec3",
+                "reference": "816c605e3e0dd986548d62e9f6d9367a6b908ec3",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "security",
                 "toolbar"
             ],
-            "time": "2014-12-11 11:31:34"
+            "time": "2014-12-14 20:14:01"
         },
         {
             "name": "doctrine/annotations",
@@ -1605,16 +1605,16 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "df991c124a2212371443b586a1be767500036dee"
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/df991c124a2212371443b586a1be767500036dee",
-                "reference": "df991c124a2212371443b586a1be767500036dee",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/b20efe38845d20458702f97f3ff625d80805897b",
+                "reference": "b20efe38845d20458702f97f3ff625d80805897b",
                 "shasum": ""
             },
             "require": {
@@ -1675,7 +1675,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2014-10-14 14:45:32"
+            "time": "2014-12-12 05:04:05"
         },
         {
             "name": "monolog/monolog",
