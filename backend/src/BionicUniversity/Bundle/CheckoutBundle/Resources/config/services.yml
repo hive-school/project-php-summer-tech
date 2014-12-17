@@ -1,0 +1,6 @@
+services:
+
+  cart:
+    class: BionicUniversity\Bundle\CheckoutBundle\Cart\Cart
+    calls:
+      - [setSession, ["@session"]]

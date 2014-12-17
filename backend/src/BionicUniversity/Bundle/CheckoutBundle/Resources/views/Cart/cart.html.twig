@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="cart-products">
+        {% include "BionicUniversityCheckoutBundle:Cart/partials:cart-main.html.twig" %}
+        <div>
+            <a class="btn btn-info">Оформить заказ</a>
+        </div>
+    </div>
+{% endblock %}

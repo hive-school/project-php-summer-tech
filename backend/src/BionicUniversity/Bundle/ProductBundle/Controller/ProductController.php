@@ -50,6 +50,7 @@ class ProductController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            ProductType::upload($entity);
             $em->persist($entity);
             $em->flush();
 
@@ -191,6 +192,7 @@ class ProductController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            ProductType::upload($entity);
             $em->flush();
 
             return $this->redirect($this->generateUrl('product_edit', array('id' => $id)));

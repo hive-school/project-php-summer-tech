@@ -76,7 +76,12 @@ class RoleController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', [
+            'label' => 'Create',
+            'attr' => [
+                'class' => 'btn btn-success',
+            ],
+        ]);
 
         return $form;
     }
@@ -165,7 +170,12 @@ class RoleController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', [
+            'label' => 'Update',
+            'attr' => [
+                'class' => 'btn btn-success',
+            ],
+        ]);
 
         return $form;
     }
@@ -240,7 +250,12 @@ class RoleController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('role_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', [
+                'label' => 'Delete',
+                'attr' => [
+                    'class' => 'btn btn-danger',
+                ],
+            ])
             ->getForm()
         ;
     }
