@@ -18,11 +18,13 @@ class LoadProductStatus extends AbstractFixture implements OrderedFixtureInterfa
     {
         $productStatus = new Status();
         $productStatus->setName('In sale');
+        $productStatus->setSaleable(true);
 
         $manager->persist($productStatus);
 
         $productStatus = new Status();
         $productStatus->setName('Wait');
+        $productStatus->setSaleable(false);
 
         $manager->persist($productStatus);
         $manager->flush();

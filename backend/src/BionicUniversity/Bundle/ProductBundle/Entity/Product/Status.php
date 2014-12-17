@@ -37,6 +37,29 @@ class Status
     private $products;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $saleable;
+
+    /**
+     * @return boolean
+     */
+    public function isSaleable()
+    {
+        return $this->saleable;
+    }
+
+    /**
+     * @param boolean $saleable
+     */
+    public function setSaleable($saleable)
+    {
+        $this->saleable = $saleable;
+    }
+
+    /**
      * @return mixed
      */
     public function getProducts()

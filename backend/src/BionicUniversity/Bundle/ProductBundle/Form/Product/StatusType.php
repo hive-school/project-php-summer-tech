@@ -16,6 +16,7 @@ class StatusType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('saleable')
         ;
     }
     

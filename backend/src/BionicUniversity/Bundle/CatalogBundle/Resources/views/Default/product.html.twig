@@ -2,6 +2,12 @@
 
 {% block body %}
     <h2>{{ product.name }}</h2>
-    <div>{{ product.price }}</div>
+    {% if product.status.saleable %}
+        <div>USD {{ product.price }}</div>
+        {% else %}
+        <h4>Sorry, this product not in sale..</h4>
+    {% endif %}
     <div>{{ product.description }}</div>
+    <div><img  class="img-rounded" src="/upload/{{ product.path }}" alt=""></div>
+
 {% endblock %}
