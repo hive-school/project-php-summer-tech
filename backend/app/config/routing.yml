@@ -1,3 +1,10 @@
+bionic_university_export_import:
+    resource: "@BionicUniversityExportImportBundle/Controller/"
+    type:     annotation
+    prefix:   /{_locale}
+    requirements:
+        _locale: en|ru
+
 bionic_university_delivery:
     resource: "@BionicUniversityDeliveryBundle/Controller/"
     type:     annotation

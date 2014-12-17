@@ -34,6 +34,7 @@ class AppKernel extends Kernel
             new BionicUniversity\Bundle\ProductBundle\BionicUniversityProductBundle(),
             new BionicUniversity\Bundle\DeliveryBundle\BionicUniversityDeliveryBundle(),
             new BionicUniversity\Bundle\UserBundle\BionicUniversityUserBundle(),
+            new BionicUniversity\Bundle\ExportImportBundle\BionicUniversityExportImportBundle(),
         ];
 
         $environmentBundles = [];
