@@ -19,7 +19,11 @@ interface CartInterface
      */
     public function addProduct(CartProduct $product);
 
+    public function removeProduct($id);
+
     public function fetchProducts();
 
     public function save();
+
+    public function getTotalPrice();
 } 

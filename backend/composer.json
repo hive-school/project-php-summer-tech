@@ -32,7 +32,9 @@
 
         "knplabs/knp-paginator-bundle": "2.4.*@dev",
 
-        "bocharsky-bw/security-checker-bundle": "dev-master"
+        "bocharsky-bw/security-checker-bundle": "dev-master",
+        "sonata-project/admin-bundle": "2.4.*@dev",
+        "sonata-project/doctrine-orm-admin-bundle": "2.3.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",

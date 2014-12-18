@@ -74,11 +74,13 @@ class Purchase
     }
 
     /**
-     * @param Status $status
+     * @param $status
+     * @return $this
      */
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
     }
 
 

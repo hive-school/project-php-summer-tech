@@ -4,24 +4,19 @@
     <h3>
         Products  of {{  category.name }} ({{  pagination.getTotalItemCount }})
     </h3>
-
-    <table>
-        <tr>
-            {# sorting of properties based on query components #}
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-        </tr>
-
-        {# table body #}
+    <div class="raw" class="product-list">
         {% for product in pagination %}
-            <tr {% if loop.index is odd %}class="color"{% endif %}>
-                <td>{{ product.name }}</td>
-                <td>{{ product.description }}</td>
-                <td>{{ product.price }}</td>
-            </tr>
+            <div class="col-lg-4 product">
+                <h4>
+                    <a href="{{ path('catalog_product', {'productId': product.id}) }}">
+                        {{ product.name }}
+                    </a>
+                </h4>
+                <div><img class="product-img" src="{{ product.path }}" /></div>
+                <div class="product-price">Price: {{ product.price }} grn.</div>
+            </div>
         {% endfor %}
-    </table>
+    </div>
     {# display navigation #}
     <div class="navigation">
         {{ knp_pagination_render(pagination) }}

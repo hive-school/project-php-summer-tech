@@ -46,7 +46,7 @@ class UserController extends Controller
 
                 $em->flush();
 
-                $request->getSession()->getFlashBag()->add('User successfully sign up');
+                $request->getSession()->getFlashBag()->add('Message', 'User successfully sign up');
 
                 return $this->redirect($this->generateUrl('user_sign_in'));
             }

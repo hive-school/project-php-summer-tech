@@ -57,7 +57,7 @@ class DefaultController extends Controller
         $pagination = $paginator->paginate(
             $products,
             $request->query->get('page', 1)/*page number*/,
-            2/*limit per page*/
+            9/*limit per page*/
         );
         return $this->render('BionicUniversityCatalogBundle:Default:subcategoryProducts.html.twig', array(
             'pagination' => $pagination,
@@ -66,16 +66,16 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/{categoryName}/product/{productId}")
+     * @Route("/product/{productId}", name="catalog_product")
      * @param Request $request
-     * @param $categoryName
      * @param $productId
      * @return mixed
      */
-    public function showProduct(Request $request, $categoryName, $productId)
+    public function showProduct(Request $request, $productId)
     {
         $om = $this->getDoctrine()->getRepository('BionicUniversityProductBundle:Product');
         $product = $om->find($productId);
+//        var_dump($product);die;
         return $this->render('BionicUniversityCatalogBundle:Default:product.html.twig', array(
             'product' => $product
         ));

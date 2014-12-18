@@ -13,4 +13,5 @@ FactoryMuffin::define('BionicUniversity\Bundle\ProductBundle\Entity\Product', ar
     'name'      => 'word',
     'description'      => 'text',
     'price' => 'numberBetween|50;1000',
+    'path' => 'imageUrl|640;480'
 ));

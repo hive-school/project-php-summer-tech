@@ -47,6 +47,11 @@ class Cart extends ArrayCollection implements CartInterface
         }
     }
 
+    public function removeProduct($id){
+        $key = $this->findCartProductByProductId($id);
+        $this->remove($key);
+    }
+
     public function fetchProducts()
     {
         $products = $this->getSession()->get('cart') ?: array();
@@ -61,6 +66,15 @@ class Cart extends ArrayCollection implements CartInterface
         $this->getSession()->set('cart', $this->toArray());
     }
 
+    public function getTotalPrice(){
+        $total = 0;
+        /** @var CartProduct $product */
+        foreach ($this->toArray() as $product){
+            $total += $product->getPrice() * $product->getQuantity();
+        }
+        return $total;
+    }
+
 
     private function findCartProductByProductId($id){
         $foundKey = null;
@@ -73,5 +87,4 @@ class Cart extends ArrayCollection implements CartInterface
         }
         return $foundKey;
     }
-
 } 

@@ -3,12 +3,20 @@
         <th>product</th>
         <th>quantity</th>
         <th>price</th>
+        <th>total price</th>
+        <th></th>
     </tr>
     {% for product in products %}
     <tr class="cart-product">
-        <td>{{ product.productId }}</td>
+        <td><a href="{{ path('catalog_product', {'productId': product.productId}) }}">{{ product.name }}</td>
         <td>{{ product.quantity }}</td>
-        <td></td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.price * product.quantity }}</td>
+        <td>
+            <button class="remove-from-cart btn btn-danger" data-url="{{ path('remove_from_cart', {'productId': product.productId}) }}">
+                <i class="fa fa-close"></i>
+            </button>
+        </td>
     </tr>
     {% endfor %}
 </table>

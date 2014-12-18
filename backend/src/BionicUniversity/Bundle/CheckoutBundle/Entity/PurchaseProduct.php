@@ -33,11 +33,13 @@ class PurchaseProduct implements ProductPurchaseProductInterface
     }
 
     /**
-     * @param int $quantity
+     * @param $quantity
+     * @return $this
      */
     public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
+        return $this;
     }
 
     /**
@@ -49,11 +51,13 @@ class PurchaseProduct implements ProductPurchaseProductInterface
     }
 
     /**
-     * @param float $price
+     * @param $price
+     * @return $this
      */
     public function setPrice($price)
     {
         $this->price = $price;
+        return $this;
     }
 
     /**
@@ -63,7 +67,7 @@ class PurchaseProduct implements ProductPurchaseProductInterface
     private $quantity;
 
     /**
-     * @var PurchaseProduct
+     * @var Purchase
      * @ORM\ManyToOne(targetEntity="BionicUniversity\Bundle\CheckoutBundle\Entity\Purchase",inversedBy="products" )
      */
     private $purchase;
@@ -83,11 +87,13 @@ class PurchaseProduct implements ProductPurchaseProductInterface
     }
 
     /**
-     * @param mixed $product
+     * @param PurchaseProductProductInterface $product
+     * @return $this
      */
     public function setProduct( PurchaseProductProductInterface $product)
     {
         $this->product = $product;
+        return $this;
     }
 
     /**
@@ -100,7 +106,7 @@ class PurchaseProduct implements ProductPurchaseProductInterface
 
 
     /**
-     * @return PurchaseProduct
+     * @return Purchase
      */
     public function getPurchase()
     {
@@ -108,9 +114,9 @@ class PurchaseProduct implements ProductPurchaseProductInterface
     }
 
     /**
-     * @param PurchaseProduct $purchase
+     * @param Purchase $purchase
      */
-    public function setPurchase(PurchaseProduct $purchase)
+    public function setPurchase(Purchase $purchase)
     {
         $this->purchase = $purchase;
     }

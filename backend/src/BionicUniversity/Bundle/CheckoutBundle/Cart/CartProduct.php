@@ -9,16 +9,60 @@
 namespace BionicUniversity\Bundle\CheckoutBundle\Cart;
 
 
-class CartProduct {
+class CartProduct
+{
+    /**
+     * @var string
+     */
+    private $name;
+    /**
+     * @var float
+     */
+    private $price;
     /**
      * @var integer
      */
     private $productId;
-
     /**
      * @var integer
      */
     private $quantity;
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param $price
+     * @return $this
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+        return $this;
+    }
 
     /**
      * @return int

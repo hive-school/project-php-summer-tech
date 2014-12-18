@@ -188,3 +188,49 @@ main{
 form > div > div > ul {
     color: red;
 }
+
+.product-list .product{
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.product img{
+    width: 100%;
+}
+
+.product-price {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.flash-message{
+    display: none;
+    padding: 20px;
+    background: lightgreen;
+    color: darkgreen;
+    font-size: 1.3em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.product-page .price{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.product-page .add-to-cart{
+    margin: 20px 0;
+}
+
+.product-page .row{
+    margin: 15px 0;
+}
+
+.cart-products{
+    margin: 100px;
+}
+
+.cart-products .total-price{
+    font-size: 1.4em;
+    font-weight: bold;
+}
