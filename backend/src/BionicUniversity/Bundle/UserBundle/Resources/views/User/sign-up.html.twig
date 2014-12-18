@@ -7,9 +7,11 @@
         </div>
         <div class="panel-body">
             {{ form_start(form) }}
-                <div class="alert alert-danger alert-dismissible alert-fixed-top">
-                    <strong>Ooops:</strong> {{ form_errors(form) }}
-                </div>
+                {% if form_errors(form) %}
+                    <div class="alert alert-danger alert-dismissible alert-fixed-top">
+                        <strong>Ooops:</strong> {{ form_errors(form) }}
+                    </div>
+                {% endif %}
                 <div class="form-group">
                     {{ form_label(form.username) }}
                     {{ form_widget(form.username) }}
