@@ -13,7 +13,7 @@ use BionicUniversity\Bundle\CheckoutBundle\Form\PurchaseType;
 /**
  * Purchase controller.
  *
- * @Route("/purchase")
+ * @Route("/admin/purchase")
  */
 class PurchaseController extends Controller
 {

@@ -2,6 +2,10 @@
 
 {% block body %}
     <div class="cart-products">
+        <h1>
+            <i class="fa fa-shopping-cart"></i>
+            Cart
+        </h1>
         {% include "BionicUniversityCheckoutBundle:Cart/partials:cart-main.html.twig" %}
         <div>
             <a class="btn btn-info" href="{{ path('perform_purchase') }}">Perform purchase</a>
